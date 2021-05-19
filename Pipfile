@@ -1,0 +1,32 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[scripts]
+clean="pip freeze | xargs pip uninstall -y"
+start="python ./src/__init__.py"
+start_flask="env FLASK_APP=src flask run"
+test="pytest"
+dev="livereload reload.config.py"
+
+[packages]
+pydub = "==0.25.1"
+sounddevice = "==0.4.1"
+SoundFile = "==0.10.3.post1"
+audioread = "*"
+inextremis = {editable = true, path = "."}
+flask = "*"
+flask-socketio = "*"
+flask-cors = "*"
+requests = "*"
+tinytag = "*"
+eyed3 = "*"
+validators = "*"
+
+[requires]
+python_version = "3.6"
+
+[dev-packages]
+pytest = "*"
+livereload = "*"
